@@ -18,5 +18,14 @@ Some scripts to install on a VPS to make a honeypot.
 
 	If you want the honeypots to start at boot,
 	chmod +x /etc/rc.local and add the following to /etc/rc.local:
-	  cd /opt/DionaeaFR && ./start.sh &
-	  cd /opt/kippo/ && sudo -u www-data ./start.sh &
+		cd /opt/DionaeaFR && ./start.sh &
+		cd /opt/kippo/ && sudo -u www-data ./start.sh &
+
+	WOF Firewall Rules (http://nullify.cc/wof):
+		default <> pass
+		tcp any:58080<HP_IP pass
+		tcp any:58080<any deny
+		tcp any:60022<HP_IP pass
+		tcp any:60022<any deny
+		tcp any:60080<HP_IP pass
+		tcp any:60080<any deny
