@@ -23,9 +23,9 @@ Some scripts to install on a VPS to make a honeypot.
 
 	WOF Firewall Rules (http://nullify.cc/wof):
 		default <> pass
-		tcp any:58080<HP_IP pass
+		tcp any:58080<PIVOT_IP pass
 		tcp any:58080<any deny
-		tcp any:60022<HP_IP pass
+		tcp any:60022<PIVOT_IP pass
 		tcp any:60022<any deny
-		tcp any:60080<HP_IP pass
+		tcp any:60080<PIVOT_IP pass
 		tcp any:60080<any deny
