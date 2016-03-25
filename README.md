@@ -3,7 +3,8 @@ Some scripts to install on a VPS to make a honeypot.
 	You probably want to edit /etc/ssh/sshd_config and change the port from 22 to something like 60022.
 	You should do this BEFORE you run this script.
 
-	You also probably want to change your apache site entry from :80 to :60080.
+	You also probably want to change your apache config and site entry from :80 to :60080.
+	Probably :443 to :60443 as well.
 	You probably want to do this BEFORE you install dionaea.
 
 	If you take the suggestions above, you should probably firewall the above ports off.
