@@ -55,4 +55,4 @@ chown -R $apache_user:$apache_user "$install_dir/kippo-graph"
 ln -s "$install_dir/kippo-graph" "$apache_web_dir/kippo-graph"
 
 #Start Kippo
-cd "$install_dir/kippo/" && sudo -u $kippo_user "./start.sh"
+cd "$install_dir/kippo/" && sudo -u $kippo_user "./start.sh" 2>&1 > /dev/null &

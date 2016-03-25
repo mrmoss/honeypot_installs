@@ -70,4 +70,4 @@ chmod +x "$install_dir/DionaeaFR/start.sh"
 chown -R $run_user:$run_user "$install_dir/DionaeaFR/"
 
 #Start Dionaea
-cd "$install_dir/DionaeaFR" && "./start.sh"
+cd "$install_dir/DionaeaFR" && "./start.sh" 2>&1 > /dev/null &
