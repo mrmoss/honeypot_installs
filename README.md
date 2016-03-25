@@ -13,4 +13,9 @@ Some scripts to install on a VPS to make a honeypot.
 	The kippo requires 1 bit of user information, 3 times.
 	This bit is the mysql root password (to create the kippo database).
 
-	I recommend installed kippo BEFORE dionaea.
+	I recommend installing kippo BEFORE dionaea.
+
+	If you want the honeypots to start at boot,
+	chmod +x /etc/rc.local and add the following to /etc/rc.local:
+	  cd /opt/DionaeaFR && ./start.sh &
+	  cd /opt/kippo/ && sudo -u www-data ./start.sh &
