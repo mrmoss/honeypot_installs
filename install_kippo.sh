@@ -51,8 +51,11 @@ cat "$install_dir/kippo-graph/config.php"     |sed "s/define('DB_PASS', 'passwor
 cat "$install_dir/kippo-graph/config.php.tmp" |sed "s/define('DB_NAME', 'database');/define('DB_NAME', 'kippo');/g">"$install_dir/kippo-graph/config.php"
 rm -rf "$install_dir/kippo-graph/config.php.tmp"
 rm -rf "$install_dir/kippo-graph.zip"
+mv "$install_dir/kippo-graph/class/KippoPlayLog.class.php" "$install_dir/kippo-graph/classKippoPlayLog.class.php.old"
+cp "KippoPlayLog.class.php" "$install_dir/kippo-graph/class"
 chown -R $apache_user:$apache_user "$install_dir/kippo-graph"
 ln -s "$install_dir/kippo-graph" "$apache_web_dir/kippo-graph"
+chmod 777 "$install_dir/kippo-graph/generated-graphs"
 
 #Start Kippo
 cd "$install_dir/kippo/" && sudo -u $kippo_user "./start.sh" 2>&1 > /dev/null &
