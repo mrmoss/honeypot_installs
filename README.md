@@ -21,7 +21,7 @@ Some scripts to install on a VPS to make a honeypot.
 		cd /opt/DionaeaFR && ./start.sh 2>&1 > /dev/null &
 		cd /opt/kippo/ && sudo -u www-data ./start.sh 2>&1 > /dev/null &
 
-	WOF Firewall Rules (http://nullify.cc/wof):
+	WOF Firewall Rules (http://imaprettykitty.com/wof):
 		default <> pass
 		tcp any:58080<PIVOT_IP pass
 		tcp any:58080<any deny
