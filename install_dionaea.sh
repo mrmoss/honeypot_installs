@@ -65,7 +65,7 @@ mv "$install_dir/DionaeaFR/manage.py.tmp" "$install_dir/DionaeaFR/manage.py"
 cp "$install_dir/DionaeaFR/DionaeaFR/settings.py.dist" "$install_dir/DionaeaFR/DionaeaFR/settings.py"
 echo "#!/bin/bash" > "$install_dir/DionaeaFR/start.sh"
 echo "python manage.py collectstatic --noinput" >> "$install_dir/DionaeaFR/start.sh"
-echo "python manage.py runserver 0.0.0.0:58080" >> "$install_dir/DionaeaFR/start.sh"
+echo "python manage.py runserver 0.0.0.0:58080 > /dev/null 2>&1 &" >> "$install_dir/DionaeaFR/start.sh"
 chmod +x "$install_dir/DionaeaFR/start.sh"
 chown -R $run_user:$run_user "$install_dir/DionaeaFR/"
 
